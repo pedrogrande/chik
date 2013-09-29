@@ -138,40 +138,6 @@ h3.has-sub span {
     width: 100%;
 }
 
-h3.heading.menu {
-    height: 55px;
-    background-image: url(../img/heading-menu.png);
-}
-
-h3.heading.gallery {
-    height: 58px;
-    background-image: url(../img/heading-gallery.png);
-}
-
-h3.heading.news-specials {
-    height: 85px;
-    background-image: url(../img/heading-news-specials.png);
-}
-
-h3.heading.instagram {
-    height: 63px;
-    background-image: url(../img/heading-instagram.png);
-}
-
-h3.heading.twitter {
-    height: 62px;
-    background-image: url(../img/heading-twitter.png);
-}
-
-h3.heading.about {
-    height: 62px;
-    background-image: url(../img/heading-about.png);
-}
-
-h3.heading.location-contact {
-    height: 98px;
-    background-image: url(../img/heading-location-contact.png);
-}
 
 h4 {
     font-family: 'borutta-niunia-webfont',Arial,sans-serif;
@@ -203,13 +169,6 @@ ul {
     background-image: url(../../pictures/bgr-img-3.jpg);
 }
 
-.bgr-4 {
-    background-image: url(../../pictures/bgr-img-4.jpg);
-}
-
-.bgr-5 {
-    background-image: url(../../pictures/bgr-img-5.jpg);
-}
 
 a.phone {
     color: inherit;
@@ -219,7 +178,7 @@ a.phone {
 
 
 #home {
-    background-image: url(../img/header-bg.jpg);
+    /*background-image: url(../img/header-bg.jpg);*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 0 0;
