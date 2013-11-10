@@ -13,7 +13,13 @@
 						</div>
 						<div class="panel-body">
 							<p><%= buy_action.description.html_safe %></p>
-							<%= link_to "Buy now", buy_action.link, class: 'btn btn-success btn-lg', target: '_blank' %>
+							<% if involvement_action.link.titleize == "Contact" %>
+								<button class="btn btn-success" data-toggle="modal" data-target="#myModal">
+								  Buy now
+								</button>
+							<% else %>
+								<%= link_to "Buy now", buy_action.link, class: 'btn btn-success btn-lg', target: '_blank' %>
+							<% end %>
 						</div>
 					</div>
 				<% end %>
