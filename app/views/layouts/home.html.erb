@@ -25,9 +25,7 @@
     </head>
   <body>
 
-  <% if ContentItem.all.count > 0 %>
               <%= yield %>
-  <% end %>
     <div class="footer"  data-no-turbolink>
     <%= link_to "admin", admin_path %>
     </div>

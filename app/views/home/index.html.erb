@@ -33,7 +33,7 @@
 	 	</div>
 	 </div>
 </section>
-
+<% if !@content_item.nil? %>
 <section id="about">
   <%= render 'about' %>
 </section>
@@ -87,7 +87,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
+<% end %>
 <!--[if (gte IE 6)&(lte IE 8)]>
 <script type="text/javascript" src="assets/js/libs/selectivizr-min.js"></script>
 <![endif]-->
