@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Chik" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chik" %>">
-    <%= stylesheet_link_tag "bootstrap", :media => "all" %>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
