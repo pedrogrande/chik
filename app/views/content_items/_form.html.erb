@@ -1,0 +1,31 @@
+<%= simple_form_for(@content_item) do |f| %>
+  <%= f.error_notification %>
+
+  
+  <div class="form-group">
+    <%= f.input :about, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :quote, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :quote_author, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :twitter_widget_id, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :trailer_iframe, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :trailer_caption, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :download_link, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :download_image, input_html: { class: 'form-control' } %>
+  </div>
+
+    <%= f.button :submit %>
+<% end %>

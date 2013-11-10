@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917091839) do
+ActiveRecord::Schema.define(version: 20131109235430) do
+
+  create_table "content_items", force: true do |t|
+    t.text     "about"
+    t.text     "quote"
+    t.string   "quote_author"
+    t.string   "twitter_widget_id"
+    t.text     "trailer_iframe"
+    t.text     "trailer_caption"
+    t.text     "download_link"
+    t.text     "download_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -30,7 +43,7 @@ ActiveRecord::Schema.define(version: 20130917091839) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

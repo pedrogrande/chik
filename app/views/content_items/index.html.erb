@@ -1,0 +1,41 @@
+<h1>Listing content_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>About</th>
+      <th>Quote</th>
+      <th>Quote author</th>
+      <th>Twitter widget</th>
+      <th>Trailer iframe</th>
+      <th>Trailer caption</th>
+      <th>Download link</th>
+      <th>Download image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @content_items.each do |content_item| %>
+      <tr>
+        <td><%= content_item.about %></td>
+        <td><%= content_item.quote %></td>
+        <td><%= content_item.quote_author %></td>
+        <td><%= content_item.twitter_widget_id %></td>
+        <td><%= content_item.trailer_iframe %></td>
+        <td><%= content_item.trailer_caption %></td>
+        <td><%= content_item.download_link %></td>
+        <td><%= content_item.download_image %></td>
+        <td><%= link_to 'Show', content_item %></td>
+        <td><%= link_to 'Edit', edit_content_item_path(content_item) %></td>
+        <td><%= link_to 'Destroy', content_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content item', new_content_item_path %>

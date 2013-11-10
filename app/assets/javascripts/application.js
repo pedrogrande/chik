@@ -23,7 +23,7 @@ $(window).load(function() {
   $('.nav li a').click(function() {
     var currLocation = $(this).attr('href');
     // if (currLocation != '#home') {
-      $('html, body').animate({scrollTop: $(currLocation).offset().top - $('#nav').height()},1000);
+      $('html, body').animate({scrollTop: $(currLocation).offset().top - $('#nav').height()},3000);
     // } else {
     //   $('html, body').animate({scrollTop: '0px'},1000);   
     // };
