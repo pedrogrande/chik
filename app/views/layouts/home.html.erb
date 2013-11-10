@@ -25,7 +25,7 @@
     </head>
   <body>
 
-  <% if ContentItem.count > 0 %>
+  <% if ContentItem.all.count > 0 %>
               <%= yield %>
   <% end %>
     <div class="footer"  data-no-turbolink>
