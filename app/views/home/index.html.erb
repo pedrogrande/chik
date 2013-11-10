@@ -42,26 +42,21 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div class="panel panel-default">
-				<div class="panel-body">
-				<p>THE CHIKUKWA PROJECT is a feel good story out of Africa. For the last 20 years an incredible permaculture project has been growing in Zimbabwe.</p>
-
-				<p>Where once the people of the Chikukwa villages suffered hunger, malnutrition and high rates of disease, this community has turned its fortunes around using permaculture farming techniques. Complementing these strategies for food security, they have built their community strength through locally controlled and initiated programs for permaculture training, conflict resolution, women’s empowerment, primary education and HIV management. </p>
-
-				<p>Now they have a surplus of food and the people in these villages are healthy and proud of their achievements. Their degraded landscape has been turned into a lush paradise.</p>
-
-				<p>A brother and sister team travelled to Zimbabwe and made this film which shows why this project has been so successful.</p>
-				</div></div>
+					<div class="panel-body">
+						<%= @content_item.about.html_safe %>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="panel panel-success">
 				  <div class="panel-heading">
 				    
-				    	<p><em>"Permaculture actually solves all the problems that we face in human life.<br>So this is considered to be the right approach for us to live - if you want to save the earth."</em></p>
-						<small>Julious Piti, a Chikukwa Project founder</small>
+				    	<p><em>"<%= @content_item.quote %>"</em></p>
+						<small><%= @content_item.quote_author %></small>
 					
 				  </div>
 				</div>
-				<a class="twitter-timeline" href="https://twitter.com/ChikukwaProject" data-widget-id="380905811574136833">Tweets by @ChikukwaProject</a>
+				<a class="twitter-timeline" href="https://twitter.com/ChikukwaProject" data-widget-id="<%= @content_item.twitter_widget_id %>">Tweets by @ChikukwaProject</a>
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 						</script>
 				
@@ -85,9 +80,9 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="responsive-container">
-							<iframe src="//player.vimeo.com/video/33761246?title=0&amp;byline=0&amp;portrait=0&amp;color=777777" width="700" height="394" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<%= @content_item.trailer_iframe.html_safe %>
 						</div>
-						<p>This is a 20 minute version of the full film that you can watch here. To download the full 52 minute cut, please visit this page***.</p>
+						<p><%= @content_item.trailer_caption %></p>
 					</div>
 				</div>
 			</div>
