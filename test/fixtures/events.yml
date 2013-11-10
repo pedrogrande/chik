@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  date: 2013-11-10
+  desciption: MyText
+  location: MyString
+  suburb: MyString
+  postcode: MyString
+  link: MyString
+  cost: MyString
+
+two:
+  title: MyString
+  date: 2013-11-10
+  desciption: MyText
+  location: MyString
+  suburb: MyString
+  postcode: MyString
+  link: MyString
+  cost: MyString

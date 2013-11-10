@@ -1,0 +1,26 @@
+<h3>Get involved options</h3>
+		
+		<div class="well">
+		<% if @involvement_actions %>
+			<table class="table">
+				<tr>
+					<th>Title</th>
+					<th>Priority</th>
+					<th></th>
+					<th></th>
+				</tr>
+				<% @involvement_actions.each do |involvement_action| %>
+					<tr>
+						<td><%= involvement_action.title %></td>
+						<td><%= involvement_action.priority %></td>
+						<td><%= link_to "Edit", edit_involvement_action_path(involvement_action) %></td>
+						<td><%= link_to 'Delete', involvement_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					</tr>
+				<% end %>
+			</table>
+		<% else %>
+			<p>There are no get involved options.</p>
+		<% end %>
+		<%= link_to 'Add new option', new_involvement_action_path, class: 'btn btn-success btn-block' %>
+		</div>
+		<br>

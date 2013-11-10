@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109235430) do
+ActiveRecord::Schema.define(version: 20131110114657) do
+
+  create_table "background_images", force: true do |t|
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "priority"
+  end
+
+  create_table "buy_actions", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.string   "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "content_items", force: true do |t|
     t.text     "about"
@@ -24,6 +40,39 @@ ActiveRecord::Schema.define(version: 20131109235430) do
     t.text     "download_image"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "enquiries", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "enquiry_type"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.date     "date"
+    t.text     "desciption"
+    t.string   "location"
+    t.string   "suburb"
+    t.string   "postcode"
+    t.string   "link"
+    t.string   "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "involvement_actions", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "link"
+    t.string   "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "button_text"
   end
 
   create_table "roles", force: true do |t|

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @buy_action.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @buy_action.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @buy_action.link %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @buy_action.priority %>
+</p>
+
+<%= link_to 'Edit', edit_buy_action_path(@buy_action) %> |
+<%= link_to 'Back', buy_actions_path %>

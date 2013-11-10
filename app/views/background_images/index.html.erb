@@ -1,0 +1,27 @@
+<h1>Listing background_images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @background_images.each do |background_image| %>
+      <tr>
+        <td><%= background_image.image %></td>
+        <td><%= link_to 'Show', background_image %></td>
+        <td><%= link_to 'Edit', edit_background_image_path(background_image) %></td>
+        <td><%= link_to 'Destroy', background_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Background image', new_background_image_path %>

@@ -1,0 +1,23 @@
+<h3>Purchase Options</h3>
+
+<div class="well">
+<table class="table">
+	<tr>
+		<th>Title</th>
+		<th>Priority</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @buy_actions.each do |buy_action| %>
+		<tr>
+			<td><%= buy_action.title %></td>
+			<td><%= buy_action.priority %></td>
+			<td><%= link_to "Edit", edit_buy_action_path(buy_action) %></td>
+			<td><%= link_to 'Delete', buy_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+<br>
+<%= link_to "Add purchase option", new_buy_action_path, class: 'btn btn-success btn-block' %>
+</div>
+<br>

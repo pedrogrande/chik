@@ -158,29 +158,27 @@ h5 {
     color: #444b31;
     font-weight: normal;
 }
+h6 {
+    font-family: 'borutta-niunia-webfont',Arial,sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    color: #444b31;
+    font-weight: bold;
+}
 
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-#home {
-    background-image:url(image_path('11COnflictTransformation.png'));
-}
 
-.bgr-2 {
-    background-image: url(image_path('3ChikFarmersStories.png'));
-}
-
-.bgr-3 {
-    background-image: url(image_path('9FarmsFurtherOut.png'));
-}
 
 
 a.phone {
     color: inherit;
     text-decoration: none;
 }
+
 
 
 

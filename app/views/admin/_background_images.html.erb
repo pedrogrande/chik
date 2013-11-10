@@ -1,0 +1,26 @@
+<h3>Background images</h3>
+		
+		<div class="well">
+		<% if @background_images %>
+			<table class="table">
+				<tr>
+					<th>Image</th>
+					<th>Priority</th>
+					<th></th>
+					<th></th>
+				</tr>
+				<% @background_images.each do |background_image| %>
+					<tr>
+						<td><%= link_to background_image.image.url, target: "_blank" do %><%= image_tag background_image.image.url, class: 'img-thumbnail bg-img-list' %><% end %></td>
+						<td><%= background_image.priority %></td>
+						<td><%= link_to "Edit", edit_background_image_path(background_image) %></td>
+						<td><%= link_to 'Delete', background_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					</tr>
+				<% end %>
+			</table>
+		<% else %>
+			<p>No background images uploaded.</p>
+		<% end %>
+		<%= link_to 'Add new background image', new_background_image_path, class: 'btn btn-success btn-block' %>
+		</div>
+		<br>

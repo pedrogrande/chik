@@ -1,14 +1,26 @@
 <div class="row">
-	<div class="col-md-6">
-		<h1>Chikukwa Admin</h1>
-	</div>
-	<div class="col-md-6" >
-		<%= link_to "View site", root_path, class: 'btn btn-success' %>
+	<div class="col-md-12">
+		<h1>The Chikukwa Project: Control Centre <span class="pull-right"><%= link_to "View site", root_path, class: 'btn btn-success' %> <%= link_to "Change password", edit_registration_path(current_user), class: 'btn btn-warning' %></span></h1>
 	</div>
 </div>
 <div class="row">
-	<div class="col-md-9">
-		<%= render 'content_items/form' %>
+	<div class="col-md-6">
+		<h3>Edit main content </h3>
+		<div class="well">
+			<%= render 'content_items/form' %>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<%= render 'enquiries' %>
+		<%= render 'buy_actions' %>
+		<%= render 'involvement_actions' %>
+		<%= render 'background_images' %>
+		<%= render 'events' %>
+		
+
+		
+		<br>
+		
 
 	</div>
 </div>

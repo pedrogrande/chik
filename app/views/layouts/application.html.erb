@@ -4,17 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Chik" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chik" %>">
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "bootstrap", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+    <style>
+      .bg-img-show {
+        width: 400px;
+      }
+    </style>
   </head>
   <body>
 
-
-              <%= yield %>
-    <div class="footer"  data-no-turbolink>
-    <%= link_to "admin", admin_path %>
+  <div class="container">
+    <div class="row">
+      
+        <%= yield %>
+        
+      
     </div>
+  </div>
+    
   </body>
 </html>

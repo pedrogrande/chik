@@ -1,0 +1,17 @@
+<%= simple_form_for @background_image, html: { multipart: true } do |f| %>
+  <%= f.error_notification %>
+
+  <% if @background_image %>
+  	<%= image_tag @background_image.image.url, class: 'bg-img-show' %>
+  	<br>
+  <% end %>
+  <br>
+  <div class="form-group">
+    <%= f.input :image, as: :file, input_html: { class: 'form-control' }, hint: 'Images should be 1200px wide and 750px in height.' %>
+  </div>
+  <div class="form-group">
+    <%= f.input :priority, input_html: { class: 'form-control' }, hint: 'Image 1 will be shown first. Negative numbers makes image inactive.' %>
+  </div>
+
+    <%= f.button :submit %>
+<% end %>

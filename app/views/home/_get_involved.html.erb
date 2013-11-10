@@ -1,0 +1,58 @@
+<div class="container">
+		<div class="row">
+		<div class="col-md-12">
+				<h2>Get involved</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<% @involvement_actions.each do |involvement_action| %>
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<div class="panel-title"><%= involvement_action.title %></div>
+						</div>
+						<div class="panel-body">
+							<p><%= involvement_action.description.html_safe %></p>
+							<% if involvement_action.link.titleize == "Contact" %>
+								<button class="btn btn-success" data-toggle="modal" data-target="#myModal">
+								  Enquire now
+								</button>
+							<% else %>
+								<%= link_to involvement_action.button_text, involvement_action.link, target: '_blank', class: 'btn btn-success' %>
+							<% end %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<div class="panel-title">UPCOMING EVENTS</div>
+					</div>
+					<div class="panel-body">
+						<% if @event %>
+							<h6><%= link_to @event.title, @event.link %></h6>
+							<p><small><%= @event.desciption %></small></p>
+							<table class="table">
+								<tr>
+									<th>Date</th>
+									<td><%= @event.date.strftime('%d %b %Y') %></td>
+								</tr>
+								<tr>
+									<th>Location</th>
+									<td><%= @event.location %>, <%= @event.suburb %></td>
+								</tr>
+								<tr>
+									<th>Cost</th>
+									<td><% if @event.cost == '0' %>FREE<% else %><%= number_to_currency(@event.cost) %><% end %></td>
+								</tr>
+							</table>
+							<%= link_to "More info and register", @event.link, class: 'btn btn-success btn-sm', target: '_blank' %>
+						<% else %>
+							<p>More screenings coming soon.</p>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

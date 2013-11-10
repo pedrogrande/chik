@@ -1,0 +1,30 @@
+<h1>Enquiry</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @enquiry.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @enquiry.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @enquiry.phone %>
+</p>
+
+<p>
+  <strong>Enquiry type:</strong>
+  <%= @enquiry.enquiry_type %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <br>
+  <%= @enquiry.message %>
+</p>
+<br><br>
+<%= link_to 'Back to enquiries', enquiries_path, class: 'btn btn-success btn-sm' %> 
+<%= link_to 'Back to Control Centre', admin_path, class: 'btn btn-success btn-sm' %>

@@ -1,4 +1,15 @@
 Chik::Application.routes.draw do
+  resources :enquiries
+
+  get "contact/index"
+  resources :buy_actions
+
+  resources :involvement_actions
+
+  resources :events
+
+  resources :background_images
+
   get "admin" => 'admin#index'
   resources :content_items
 

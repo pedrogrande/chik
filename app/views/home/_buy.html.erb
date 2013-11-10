@@ -1,0 +1,38 @@
+<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Buy the film</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<% @buy_actions.each do |buy_action| %>
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<div class="panel-title"><%= buy_action.title %></div>
+						</div>
+						<div class="panel-body">
+							<p><%= buy_action.description.html_safe %></p>
+							<%= link_to "Buy now", buy_action.link, class: 'btn btn-success btn-lg', target: '_blank' %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+			<div class="col-md-7">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<div class="panel-title">THE TRAILER</div>
+					</div>
+					<div class="panel-body">
+						<div class="responsive-container">
+							<%= @content_item.trailer_iframe.html_safe %>
+						</div>
+						<br>
+						<p><%= @content_item.trailer_caption.html_safe %></p>
+					</div>
+				</div>
+			</div>
+		</div>
+        	
+
+    	</div>

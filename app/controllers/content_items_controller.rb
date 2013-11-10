@@ -1,4 +1,5 @@
 class ContentItemsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_content_item, only: [:show, :edit, :update, :destroy]
 
   # GET /content_items
@@ -42,7 +43,7 @@ class ContentItemsController < ApplicationController
   def update
     respond_to do |format|
       if @content_item.update(content_item_params)
-        format.html { redirect_to @content_item, notice: 'Content item was successfully updated.' }
+        format.html { redirect_to admin_path, notice: 'Content successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

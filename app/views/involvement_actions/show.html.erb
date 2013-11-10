@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @involvement_action.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @involvement_action.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @involvement_action.link %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @involvement_action.priority %>
+</p>
+
+<%= link_to 'Edit', edit_involvement_action_path(@involvement_action) %> |
+<%= link_to 'Back', involvement_actions_path %>

@@ -1,0 +1,22 @@
+<%= simple_form_for(@enquiry) do |f| %>
+  <%= f.error_notification %>
+
+  
+  <div class="form-group">
+    <%= f.input :name, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :email, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :phone, input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :enquiry_type, collection: ['General enquiry', 'Training at Chikukwa', 'Host a screening','Other'], input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :message, input_html: { class: 'form-control' } %>
+  </div>
+
+    <%= f.button :submit %>
+<% end %>

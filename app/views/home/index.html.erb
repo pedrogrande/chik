@@ -13,135 +13,80 @@
 	  	<!-- Collect the nav links, forms, and other content for toggling -->
 	  	<div class="collapse navbar-collapse navbar-ex1-collapse">
 	  	 	<a id="brand_title" class="navbar-brand title" href="#home">The Chikukwa Project</a>
+	  	 	<%= render 'layouts/messages' %>
 	    	<ul class="nav navbar-nav nav-pills pull-right">
 
 	                <li><a href="#home">home</a></li>
 	                <li><a href="#about">about</a></li>
-	                <li><a href="#trailer">trailer</a></li>
+	                <li><a href="#buy">buy the film</a></li>
 	                <li><a href="#get_involved">get involved</a></li>
+	                <li><a href="#" data-toggle="modal" data-target="#myModal">contact us</a></li>
 	        </ul>
 	    </div></div>
 	</div>
 </nav>
 <section id="home" style="">
-<div class="container" id="logo_title">
-	<div class="row page1">
-
- 	<h1>The Chikukwa Project</h1>
- 	<p class="lead">An amazing story of African villagers who turned their lives around.</p>
- 	</div></div>
+	<div class="container" id="logo_title">
+		<div class="row page1">
+	 		<h1>The Chikukwa Project</h1>
+	 		<p class="lead">An amazing story of African villagers who turned their lives around.</p>
+	 	</div>
+	 </div>
 </section>
 
 <section id="about">
-  <div class="container">
-  		<div class="row">
-			<div class="col-md-12">
-				<h2>About the project</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<%= @content_item.about.html_safe %>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-success">
-				  <div class="panel-heading">
-				    
-				    	<p><em>"<%= @content_item.quote %>"</em></p>
-						<small><%= @content_item.quote_author %></small>
-					
-				  </div>
-				</div>
-				<a class="twitter-timeline" href="https://twitter.com/ChikukwaProject" data-widget-id="<%= @content_item.twitter_widget_id %>">Tweets by @ChikukwaProject</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-						</script>
-				
-			</div>
-		</div>
-    </div>
+  <%= render 'about' %>
 </section>
 
 <section class="img-box bgr-2"></section>
-
-    <section id="trailer">
-
-        	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2>The trailer</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<div class="responsive-container">
-							<%= @content_item.trailer_iframe.html_safe %>
-						</div>
-						<p><%= @content_item.trailer_caption %></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<div class="panel-title">ANNOUNCEMENTS</div>
-					</div>
-					<div class="panel-body">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-        	
-
-    	</div>
-
-    </section>
-<section class="img-box bgr-3"></section>
-
-    <section id="get_involved">
-
-        	<div class="container">
-		<div class="row">
-		<div class="col-md-12">
-				<h2>Get involved</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-8">
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<div class="panel-title">HOST A SCREENING</div>
-					</div>
-					<div class="panel-body">
-						
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="panel panel-success">
-					<div class="panel-body">
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-        	
-
-
-    </section>
-
-
-     
-    
-  </div>
+<section id="buy">
+	<%= render 'buy' %>
 </section>
+
+<section class="img-box bgr-3"></section>
+<section id="get_involved">
+	<%= render 'get_involved' %>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@enquiry) do |f| %>
+          <%= f.error_notification %>
+
+          
+          <div class="form-group">
+            <%= f.input :enquiry_type, collection: ['General enquiry', 'Training at Chikukwa', 'Host a screening','Other'], priority: ['Host a screening'], input_html: { class: 'form-control' } %>
+          </div>
+          <div class="form-group">
+            <%= f.input :name, input_html: { class: 'form-control' } %>
+          </div>
+          <div class="form-group">
+            <%= f.input :email, input_html: { class: 'form-control' } %>
+          </div>
+          <div class="form-group">
+            <%= f.input :phone, input_html: { class: 'form-control' } %>
+          </div>
+          <div class="form-group">
+            <%= f.input :message, input_html: { class: 'form-control' } %>
+          </div>
+
+            <%= f.submit 'Enquire', class: 'btn btn-success' %> 
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <!--[if (gte IE 6)&(lte IE 8)]>
 <script type="text/javascript" src="assets/js/libs/selectivizr-min.js"></script>

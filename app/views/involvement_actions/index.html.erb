@@ -1,0 +1,33 @@
+<h1>Listing involvement_actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th>Priority</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @involvement_actions.each do |involvement_action| %>
+      <tr>
+        <td><%= involvement_action.title %></td>
+        <td><%= involvement_action.description %></td>
+        <td><%= involvement_action.link %></td>
+        <td><%= involvement_action.priority %></td>
+        <td><%= link_to 'Show', involvement_action %></td>
+        <td><%= link_to 'Edit', edit_involvement_action_path(involvement_action) %></td>
+        <td><%= link_to 'Destroy', involvement_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Involvement action', new_involvement_action_path %>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Chik" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chik" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+    <style>
+        #home {
+            background-image: url(<%= asset_path '11COnflictTransformation.png' %>);
+        }
+
+        .bgr-2 {
+            background-image: url(<%= asset_path '3ChikFarmersStories.png' %>);
+        }
+
+        .bgr-3 {
+            background-image: url(<%= asset_path '9FarmsFurtherOut.png' %>);
+        }
+        .panel-title {text-transform: uppercase;}
+    </style>
+    </head>
+  <body>
+
+
+              <%= yield %>
+    <div class="footer"  data-no-turbolink>
+    <%= link_to "admin", admin_path %>
+    </div>
+  </body>
+</html>
