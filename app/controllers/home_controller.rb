@@ -7,5 +7,6 @@ class HomeController < ApplicationController
     @buy_actions = BuyAction.active
     @involvement_actions = InvolvementAction.active
     @enquiry = Enquiry.new
+    @background_images = BackgroundImage.active
   end
 end

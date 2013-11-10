@@ -9,17 +9,11 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
     <style>
-        #home {
-            background-image: url(<%= asset_path '11COnflictTransformation.png' %>);
+        <% @background_images.each_with_index do |background_image, index| %>
+        .bgr-<%= index + 1 %> {
+            background-image: url(<%= background_image.image.url %>);
         }
-
-        .bgr-2 {
-            background-image: url(<%= asset_path '3ChikFarmersStories.png' %>);
-        }
-
-        .bgr-3 {
-            background-image: url(<%= asset_path '9FarmsFurtherOut.png' %>);
-        }
+        <% end %>
         .panel-title {text-transform: uppercase;}
     </style>
     </head>
