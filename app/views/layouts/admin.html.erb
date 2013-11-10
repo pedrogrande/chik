@@ -15,5 +15,15 @@
     <br>
               <%= yield %>
   </div>
+  <script>
+  $(document).ready(function() {
+    $('.ckeditor').ckeditor({
+      // optional config
+      config.toolbar = [
+        [ 'Source', '-', 'Bold', 'Italic' ]
+      ];
+    });
+  });
+  </script>
   </body>
 </html>
