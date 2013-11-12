@@ -30,6 +30,11 @@ class EnquiriesController < ApplicationController
 
     respond_to do |format|
       if @enquiry.save
+        logger.info {"Starting first email"}
+        EnquiryMailer.enquiry_received(@enquiry).deliver
+
+        logger.info {"Starting second email"}
+        EnquiryMailer.enquiry_response(@enquiry).deliver
         format.html { redirect_to root_path, notice: 'Thank you. Your enquiry has been sent.' }
         format.json { render action: 'show', status: :created, location: @enquiry }
       else
