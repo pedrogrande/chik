@@ -26,7 +26,7 @@ group :development, :test do
   gem 'thin'
 end
 group :production do
-  gem 'unicorn'
+  gem 'thin'
   gem 'rails_12factor'
   gem 'pg'
   gem 'newrelic_rpm'
