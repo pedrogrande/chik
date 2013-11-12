@@ -62,7 +62,7 @@
 
           
           <div class="form-group">
-            <%= f.input :enquiry_type, collection: ['General enquiry', 'Training at Chikukwa', 'Host a screening','Other'], priority: ['Host a screening'], input_html: { class: 'form-control' } %>
+            <%= f.input :enquiry_type, collection: ['General enquiry', 'Buy the DVD', 'Host a screening', 'Training at Chikukwa','Other'], default: ['Buy the DVD'], input_html: { class: 'form-control' } %>
           </div>
           <div class="form-group">
             <%= f.input :name, input_html: { class: 'form-control' } %>
