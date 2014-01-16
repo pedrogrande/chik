@@ -8,5 +8,7 @@ class AdminController < ApplicationController
   	@buy_actions = BuyAction.all
   	@involvement_actions = InvolvementAction.all
   	@users = User.all
+    @image = Image.new
+    @images = Image.all
   end
 end

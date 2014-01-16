@@ -1,4 +1,6 @@
 Chik::Application.routes.draw do
+  resources :images
+
   resources :enquiries
 
   get "contact/index"

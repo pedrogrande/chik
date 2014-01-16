@@ -9,6 +9,26 @@
 		<div class="well">
 			<%= render 'content_items/form' %>
 		</div>
+		<h3>Images for photo gallery</h3>
+		<div class="well">
+			<% if @images %>
+				<table class="table table-hover">
+					<% @images.each do |image| %>
+					<tr>
+						<td><%= image_tag image.image, width: '150px' %></td>
+						<td><%= image.caption %></td>
+						<td><%= link_to 'Edit', edit_image_path(image) %></td>
+        				<td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        			</tr>
+        			<% end %>
+        		</table>
+        	<% end %>
+        	<hr>
+        	<h4>Add image</h4>
+
+			<%= render 'images/form' %>
+		</div>
+
 	</div>
 	<div class="col-md-6">
 		<%= render 'enquiries' %>

@@ -8,5 +8,6 @@ class HomeController < ApplicationController
     @involvement_actions = InvolvementAction.active
     @enquiry = Enquiry.new
     @background_images = BackgroundImage.active
+    @images = Image.all
   end
 end
