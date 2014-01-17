@@ -10,5 +10,7 @@ class AdminController < ApplicationController
   	@users = User.all
     @image = Image.new
     @images = Image.all
+    @download = Download.new
+    @downloads = Download.all
   end
 end

@@ -1,4 +1,6 @@
 Chik::Application.routes.draw do
+  resources :downloads
+
   resources :images
 
   resources :enquiries

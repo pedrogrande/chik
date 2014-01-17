@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116215525) do
+ActiveRecord::Schema.define(version: 20140117005148) do
 
   create_table "background_images", force: true do |t|
     t.string   "image"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(version: 20140116215525) do
     t.text     "download_image"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "downloads", force: true do |t|
+    t.string   "name"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "content"
   end
 
   create_table "enquiries", force: true do |t|

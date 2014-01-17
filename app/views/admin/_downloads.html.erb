@@ -1,0 +1,22 @@
+<h3>Downloads</h3>
+
+<div class="well">
+<table class="table">
+	<tr>
+		<th>Title</th>
+		<th>File link</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @downloads.each do |download| %>
+		<tr>
+			<td><%= download.name %></td>
+			<td><%= link_to 'Link', download.file %></td>
+			<td><%= link_to "Edit", edit_download_path(download) %></td>
+			<td><%= link_to 'Delete', download, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+	<% end %>
+</table>
+<%= link_to 'Add new download', new_download_path, class: 'btn btn-success btn-block' %>
+</div>
+<br>

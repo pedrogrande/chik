@@ -9,5 +9,6 @@ class HomeController < ApplicationController
     @enquiry = Enquiry.new
     @background_images = BackgroundImage.active
     @images = Image.all
+    @downloads = Download.all
   end
 end
