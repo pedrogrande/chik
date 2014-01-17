@@ -15,6 +15,8 @@ gem 'simple_form', '>= 3.0.0.rc'
 gem 'ckeditor_rails', :git => 'https://github.com/tsechingho/ckeditor-rails'
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
+gem 'paypal-express'
+gem 'thin'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
@@ -22,11 +24,7 @@ group :development do
   gem 'quiet_assets'
   gem 'sqlite3'
 end
-group :development, :test do
-  gem 'thin'
-end
 group :production do
-  gem 'thin'
   gem 'rails_12factor'
   gem 'pg'
   gem 'newrelic_rpm'
