@@ -20,7 +20,9 @@
 	                <li><a href="#about">about</a></li>
 	                <li><a href="#buy">buy the film</a></li>
 	                <li><a href="#get_involved">get involved</a></li>
-                  <li><a href="#gallery" data-toggle="modal" data-target="#gallery">gallery</a></li>
+                  <% if @images.count > 0 %>
+                    <li><a href="#gallery" data-toggle="modal" data-target="#gallery">gallery</a></li>
+                  <% end %>
 	                <li><a href="#" data-toggle="modal" data-target="#myModal">contact</a></li>
 	        </ul>
 	    </div></div>
@@ -48,6 +50,8 @@
 <section id="get_involved">
 	<%= render 'get_involved' %>
 </section>
+
+<% if @images.count > 0 %>
 <sction class="gallery" id="gallery">
  <!-- Carousel
     ================================================== -->
@@ -76,7 +80,7 @@
     </div><!-- /.carousel -->
 
 </section>
-
+<% end %>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
