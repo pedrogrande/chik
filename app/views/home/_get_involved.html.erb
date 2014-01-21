@@ -17,6 +17,8 @@
 								<button class="btn btn-success" data-toggle="modal" data-target="#myModal">
 								  Enquire now
 								</button>
+							<% elsif involvement_action.link.titleize == '' %>
+								&nbsp;
 							<% else %>
 								<%= link_to involvement_action.button_text, involvement_action.link, target: '_blank', class: 'btn btn-success' %>
 							<% end %>
